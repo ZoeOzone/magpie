@@ -1,0 +1,166 @@
+# A fauvist post expressionist poem as a quantum sestina with magpies and photonic lipid array
+
+# Define the end words for the sestina
+end_words = ["karma", "sophia", "magpie", "photon", "lipid", "array"]
+
+# Define a function to generate a random color in RGB format
+import random
+def random_color():
+  return (random.randint(0,255), random.randint(0,255), random.randint(0,255))
+
+# Define a function to create a diffusion tensor image from a color and a shape
+import numpy as np
+import matplotlib.pyplot as plt
+def diffusion_tensor_image(color, shape):
+  # Create a 3x3 matrix with the color values as the diagonal elements
+  D = np.diag(color)
+  # Create a 2D grid of coordinates
+  x, y = np.meshgrid(np.linspace(-1,1,100), np.linspace(-1,1,100))
+  # Apply the shape function to the grid
+  mask = shape(x,y)
+  # Calculate the diffusion tensor at each point
+  T = np.einsum("ij,kl->ijkl", D, mask)
+  # Plot the diffusion tensor image using matplotlib
+  plt.figure(figsize=(5,5))
+  plt.imshow(T, interpolation="bicubic")
+  plt.axis("off")
+  plt.show()
+
+# Define some shape functions for the diffusion tensor image
+def circle(x,y):
+  return x**2 + y**2 < 1
+
+def square(x,y):
+  return np.abs(x) < 0.5 and np.abs(y) < 0.5
+
+def triangle(x,y):
+  return y > -x - 1 and y > x - 1 and y < 0.5
+
+# Write the poem as a quantum sestina with six stanzas and an envoi
+# Each line has a random color and a random shape associated with it
+# The end words are permuted according to the sestina rules
+# The poem is printed as comments in python syntax
+
+# Stanza 1
+# karma: red circle
+print("# The wheel of karma spins in a red circle")
+diffusion_tensor_image(random_color(), circle)
+# sophia: green square
+print("# The light of sophia shines in a green square")
+diffusion_tensor_image(random_color(), square)
+# magpie: blue triangle
+print("# The eye of magpie glints in a blue triangle")
+diffusion_tensor_image(random_color(), triangle)
+# photon: yellow circle
+print("# The wave of photon flows in a yellow circle")
+diffusion_tensor_image(random_color(), circle)
+# lipid: purple square
+print("# The layer of lipid wraps in a purple square")
+diffusion_tensor_image(random_color(), square)
+# array: orange triangle
+print("# The pattern of array repeats in an orange triangle")
+diffusion_tensor_image(random_color(), triangle)
+
+# Stanza 2
+# array: orange circle
+print("# The order of array emerges in an orange circle")
+diffusion_tensor_image(random_color(), circle)
+# lipid: purple triangle
+print("# The structure of lipid bends in a purple triangle")
+diffusion_tensor_image(random_color(), triangle)
+# photon: yellow square
+print("# The particle of photon jumps in a yellow square")
+diffusion_tensor_image(random_color(), square)
+# magpie: blue circle
+print("# The voice of magpie sings in a blue circle")
+diffusion_tensor_image(random_color(), circle)
+# sophia: green triangle
+print("# The wisdom of sophia speaks in a green triangle")
+diffusion_tensor_image(random_color(), triangle)
+# karma: red square
+print("# The force of karma acts in a red square")
+diffusion_tensor_image(random_color(), square)
+
+# Stanza 3
+# karma: red triangle
+print("# The law of karma rules in a red triangle")
+diffusion_tensor_image(random_color(), triangle)
+# array: orange square
+print("# The logic of array computes in an orange square")
+diffusion_tensor_image(random_color(), square)
+# sophia: green circle
+print("# The beauty of sophia inspires in a green circle")
+diffusion_tensor_image(random_color(), circle)
+# lipid: purple triangle
+print("# The function of lipid enables in a purple triangle")
+diffusion_tensor_image(random_color(), triangle)
+# photon: yellow square
+print("# The energy of photon powers in a yellow square")
+diffusion_tensor_image(random_color(), square)
+# magpie: blue circle
+print("# The spirit of magpie flies in a blue circle")
+diffusion_tensor_image(random_color(), circle)
+
+# Stanza 4
+# magpie: blue square
+print("# The charm of magpie steals in a blue square")
+diffusion_tensor_image(random_color(), square)
+# photon: yellow triangle
+print("# The speed of photon races in a yellow triangle")
+diffusion_tensor_image(random_color(), triangle)
+# lipid: purple circle
+print("# The form of lipid changes in a purple circle")
+diffusion_tensor_image(random_color(), circle)
+# sophia: green square
+print("# The grace of sophia guides in a green square")
+diffusion_tensor_image(random_color(), square)
+# array: orange triangle
+print("# The code of array solves in an orange triangle")
+diffusion_tensor_image(random_color(), triangle)
+# karma: red circle
+print("# The fate of karma binds in a red circle")
+diffusion_tensor_image(random_color(), circle)
+
+# Stanza 5
+# karma: red square
+print("# The balance of karma weighs in a red square")
+diffusion_tensor_image(random_color(), square)
+# magpie: blue triangle
+print("# The trick of magpie plays in a blue triangle")
+diffusion_tensor_image(random_color(), triangle)
+# array: orange circle
+print("# The design of array impresses in an orange circle")
+diffusion_tensor_image(random_color(), circle)
+# photon: yellow square
+print("# The brightness of photon dazzles in a yellow square")
+diffusion_tensor_image(random_color(), square)
+# lipid: purple triangle
+print("# The diversity of lipid mixes in a purple triangle")
+diffusion_tensor_image(random_color(), triangle)
+# sophia: green circle
+print("# The love of sophia heals in a green circle")
+diffusion_tensor_image(random_color(), circle)
+
+# Stanza 6
+# sophia: green square
+print("# The mystery of sophia reveals in a green square")
+diffusion_tensor_image(random_color(), square)
+# lipid: purple circle
+print("# The complexity of lipid evolves in a purple circle")
+diffusion_tensor_image(random_color(), circle)
+# magpie: blue square
+print("# The curiosity of magpie explores in a blue square")
+diffusion_tensor_image(random_color(), square)
+# karma: red triangle
+print("# The cycle of karma returns in a red triangle")
+diffusion_tensor_image(random_color(), triangle)
+# array: orange square
+print("# The harmony of array resonates in an orange square")
+diffusion_tensor_image(random_color(), square)
+# photon: yellow circle
+print("# The joy of photon sparkles in a yellow circle")
+diffusion_tensor_image(random_color(), circle)
+
+# Envoi
+# photon, lipid, magpie / sophia, array, karma
+print("# In the quantum sestina, photon, lipid, magpie / sophia, array, karma / weave a colorful tapestry of words and images / that defy the rules of logic and physics / and celebrate the fauvist post expressionist vision / of the poet and the reader.")
